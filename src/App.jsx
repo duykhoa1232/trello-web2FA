@@ -1,7 +1,7 @@
 
 import Button from '@mui/material/Button'
-import HomeIcon from '@mui/icons-material/Home';
-import { pink } from '@mui/material/colors';
+import HomeIcon from '@mui/icons-material/Home'
+import { pink } from '@mui/material/colors'
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       Link
       </Button>
       <HomeIcon />
-<HomeIcon color="primary" />
+      <HomeIcon color="primary" />
 <HomeIcon color="secondary" />
 <HomeIcon color="success" />
 <HomeIcon color="action" />
