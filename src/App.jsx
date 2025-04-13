@@ -1,5 +1,8 @@
 
 import Button from '@mui/material/Button'
+import HomeIcon from '@mui/icons-material/Home';
+import { pink } from '@mui/material/colors';
+
 
 function App() {
 
@@ -13,6 +16,13 @@ function App() {
       <Button variant="contained" href="#contained-buttons">
       Link
       </Button>
+      <HomeIcon />
+<HomeIcon color="primary" />
+<HomeIcon color="secondary" />
+<HomeIcon color="success" />
+<HomeIcon color="action" />
+<HomeIcon color="disabled" />
+<HomeIcon sx={{ color: pink[500] }} />
     </>
   )
 }
