@@ -1,23 +1,23 @@
 import { createTheme } from '@mui/material/styles'
-import { red } from '@mui/material/colors'
 
-// Create a theme instance.
 const theme = createTheme({
-  cssVariables: true,
-  palette: {
-    primary: {
-      main: red[500]
+  colorSchemes: {
+    light: {
+      palette: {
+        // Customize if needed
+        primary: {
+          main: '#1976d2',
+        },
+      },
     },
-    secondary: {
-      main: '#19857b'
+    dark: {
+      palette: {
+        // Customize if needed
+      },
     },
-    error: {
-      main: red.A400
-    },
-    text: {
-        secondary: red[500]
-    },
-  }
-})
+  },
+  cssVarPrefix: 'mui',
+  colorSchemeSelector: 'body',
+});
 
-export default theme
+export default theme;
