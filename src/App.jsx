@@ -10,6 +10,55 @@ import Radio from "@mui/material/Radio";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
+export function ModeSelect() {
+  const { mode, setMode } = useColorScheme();
+
+  if (!mode) {
+    return null;
+  }
+
+  const handleChange = (event) => {
+    setMode(event.target.value); // Cập nhật chế độ chủ đề
+  };
+
+  return (
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="theme-select-label">Theme</InputLabel>
+      <Select
+        labelId="theme-select-label"
+        id="theme-select"
+        value={mode}
+        label="Theme"
+        onChange={handleChange}
+      >
+        <MenuItem value="system">
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <SettingsBrightnessIcon />
+            system
+          </div>
+        </MenuItem>
+        <MenuItem value="light">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <LightModeIcon fontSize="small" />
+            Light
+          </Box>
+        </MenuItem>
+        <MenuItem value="dark">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <DarkModeOutlinedIcon />
+            Dark
+          </Box>
+        </MenuItem>
+      </Select>
+    </FormControl>
+  );
+}
 
 export function ModeToggle() {
   const { mode, setMode } = useColorScheme();
@@ -23,11 +72,9 @@ export function ModeToggle() {
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        // bgcolor: 'background.default',
         color: "text.primary",
         borderRadius: 1,
         p: 3,
-        // minHeight: '56px',
       }}
     >
       <FormControl>
@@ -52,6 +99,7 @@ function App() {
   return (
     <>
       <ModeToggle />
+      <ModeSelect /> {/* Thêm ModeSelect vào App */}
       <Typography variant="h2" component="h2" color="text.secondary">
         h1. Heading
       </Typography>
